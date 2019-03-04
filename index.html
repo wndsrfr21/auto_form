@@ -1,0 +1,141 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Thasadith" rel="stylesheet">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+  <!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your functions here -->
+  <script type="text/javascript">
+    function loadData(){
+      var x1 = [1,1,1,0,0,0];
+      var Oxaliplatin = [0,0,0,1,1,1];
+      var Irinotecan = [1,1,1,0,0,0];
+      var Capecitabine = [1,1,1,0,0,0];
+      var Gemcitabine = [1,1,1,0,0,0];
+      var Cisplatin = [1,1,1,0,0,0];
+
+    }
+    document.addEventListener('DOMContentLoaded',function() {
+      document.querySelector('select[name="o1"]').onchange=updateBoxes;
+      document.querySelector('select[name="o2"]').onchange=updateBoxes;
+      document.querySelector('select[name="o3"]').onchange=updateBoxes;
+    },false);
+
+    function updateBoxes(){
+      loadData();
+      checkBoxes();
+
+    }
+    function checkBoxes(){
+      if ((document.getElementById("o1").value || document.getElementById("o2").value || document.getElementById("o3").value ) == "Fluorouracil") {
+        document.getElementById("c1").checked = true;
+      } else {
+        document.getElementById("c1").checked = false;
+      }
+      if ((document.getElementById("o1").value || document.getElementById("o2").value || document.getElementById("o3").value ) == "Fluorouracil") {
+        document.getElementById("c2").checked = true;
+      } else {
+        document.getElementById("c2").checked = false;
+      }
+      if ((document.getElementById("o1").value || document.getElementById("o2").value || document.getElementById("o3").value ) == "Fluorouracil") {
+        document.getElementById("c3").checked = true;
+        
+      } else {
+        document.getElementById("c3").checked = false;
+      }
+      if ((document.getElementById("o1").value || document.getElementById("o2").value || document.getElementById("o3").value ) == "Oxaliplatin") {
+        document.getElementById("c4").checked = true;
+        console.log("c4");
+      } else {
+        document.getElementById("c4").checked = false;
+      }
+      if ((document.getElementById("o1").value || document.getElementById("o2").value || document.getElementById("o3").value ) == "Oxaliplatin") {
+        document.getElementById("c5").checked = true;
+      } else {
+        document.getElementById("c5").checked = false;
+      }
+      if ((document.getElementById("o1").value || document.getElementById("o2").value || document.getElementById("o3").value ) == "Oxaliplatin") {
+        document.getElementById("c6").checked = true;
+      } else {
+        document.getElementById("c6").checked = false;
+      }
+    }
+    </script>
+
+  <!-- Add your HTML here -->
+  <div class="flex-container">
+      <H1>Test Form Print</H1>
+  </div>
+  <div class="flex-container" >
+    <select id = "o1" name = "o1">
+      <option value="Select" >Select</option>
+      <option value="Fluorouracil" >Fluorouracil</option>
+      <option value="Oxaliplatin">Oxaliplatin</option>
+      <option value="Irinotecan">Irinotecan</option>
+      <option value="Capecitabine">Capecitabine</option>
+      <option value="Gemcitabine">Gemcitabine</option>
+      <option value="Cisplatin">Cisplatin</option>
+    </select>
+    <select id = "o2" name = "o2">
+        <option value="Select" selected>Select</option>
+        <option value="Fluorouracil" >Fluorouracil</option>
+        <option value="Oxaliplatin">Oxaliplatin</option>
+        <option value="Irinotecan">Irinotecan</option>
+        <option value="Capecitabine">Capecitabine</option>
+        <option value="Gemcitabine">Gemcitabine</option>
+        <option value="Cisplatin">Cisplatin</option>
+    </select>
+      <select id = "o3" name = "o3" onchange="checkBoxes();">
+          <option value="Select" selected>Select</option>
+          <option value="Fluorouracil" >Fluorouracil</option>
+          <option value="Oxaliplatin">Oxaliplatin</option>
+          <option value="Irinotecan">Irinotecan</option>
+          <option value="Capecitabine">Capecitabine</option>
+          <option value="Gemcitabine">Gemcitabine</option>
+          <option value="Cisplatin">Cisplatin</option>
+      </select>
+  </div>
+  <div class="flex-container">
+      <div><input type="checkbox" id="c1" value="No"> Allergic Reaction<br></div>
+      <div><input type="checkbox" id="c2" value="No"> Constipation<br></div>
+      <div><input type="checkbox" id="c3" value="No"> Diarrhea<br></div>
+      <div><input type="checkbox" id="c4" value="No"> Dizziness<br></div>
+      <div><input type="checkbox" id="c5" value="No"> Fatigue<br></div>
+      <div><input type="checkbox" id="c6" value="No"> Forgetfulness<br></div>
+  </div>
+
+
+
+  <script src="js/vendor/modernizr-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+</body>
+
+</html>
